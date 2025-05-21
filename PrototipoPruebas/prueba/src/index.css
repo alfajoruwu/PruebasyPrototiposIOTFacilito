@@ -1,0 +1,217 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar izquierdo */
+.sidebar {
+  width: 220px;
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-right: 1px solid #ccc;
+  overflow-y: auto;
+}
+
+.left-sidebar h2 {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.left-sidebar ul {
+  list-style: none;
+}
+
+.point-item {
+  margin-bottom: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.point-item:hover {
+  background-color: #ddd;
+}
+
+.point-item.active {
+  background-color: #bbb;
+  font-weight: bold;
+}
+
+/* Sidebar derecho */
+.right-sidebar {
+  width: 240px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-left: 1px solid #ccc;
+}
+
+.right-sidebar h2 {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.point-config .icon-options {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.icon-option {
+  padding: 6px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.icon-option.selected {
+  border-color: #007bff;
+}
+
+.point-config .custom-text-input {
+  width: 100%;
+  padding: 6px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.point-config .size-slider {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.point-config .preset-info {
+  font-size: 13px;
+  color: #555;
+}
+
+/* Área principal */
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fafafa;
+  position: relative;
+}
+
+/* Contenedor redimensionable */
+.resizable-wrapper {
+  position: relative;
+  width: 40vw;     /* 80% del ancho de la ventana */
+  height: 70vh;    /* 60% del alto de la ventana */
+  min-width: 200px;
+  min-height: 200px;
+  resize: both;
+  overflow: hidden;
+  border: 2px dashed #999;
+  padding: 5px;
+  background-color: white;
+  cursor: nwse-resize;
+}
+
+.resizable-wrapper::after {
+  content: '';
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(45deg, transparent 40%, #999 40%, #999 60%, transparent 60%);
+  background-size: 8px 8px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.stretch-image {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  display: block;
+}
+
+/* Puntos con icono y texto sobre la imagen */
+.point-marker {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+  padding: 8px 10px;
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  font-family: sans-serif;
+  max-width: 100px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.point-marker svg {
+  flex-shrink: 0;
+}
+
+.point-marker span {
+  margin-top: 4px;
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  color: #333;
+  white-space: normal;
+}
+
+
+/* Dropdown y botones */
+select {
+  width: 100%;
+  padding: 6px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn-add {
+  width: 100%;
+  padding: 6px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.btn-add:hover {
+  background-color: #0056b3;
+}
+
+/* Dropdown */
+select {
+  width: 100%;
+  padding: 6px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
